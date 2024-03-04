@@ -15,10 +15,7 @@ This repository contains my solutions to various katas from Codewars. Each kata 
 ## Languages Used
 
 - [x] JavaScript
-- [ ] Python
-- [ ] Java
 - [ ] Ruby
 - [ ] C++
-- [ ] C#
 
 Feel free to explore the solutions and suggest improvements or alternative solutions!

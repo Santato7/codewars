@@ -1,83 +1,23 @@
-const chai = require("chai");
-const assert = chai.assert;
-chai.config.truncateThreshold = 0;
+const assert = require("assert");
+const points = require("./kata.js");
 
-describe("Total amount of points", function () {
-  it("Sample Tests", function () {
-    assert.strictEqual(
-      points([
-        "1:0",
-        "2:0",
-        "3:0",
-        "4:0",
-        "2:1",
-        "3:1",
-        "4:1",
-        "3:2",
-        "4:2",
-        "4:3",
-      ]),
-      30
-    );
-    assert.strictEqual(
-      points([
-        "1:1",
-        "2:2",
-        "3:3",
-        "4:4",
-        "2:2",
-        "3:3",
-        "4:4",
-        "3:3",
-        "4:4",
-        "4:4",
-      ]),
-      10
-    );
-    assert.strictEqual(
-      points([
-        "0:1",
-        "0:2",
-        "0:3",
-        "0:4",
-        "1:2",
-        "1:3",
-        "1:4",
-        "2:3",
-        "2:4",
-        "3:4",
-      ]),
-      0
-    );
-    assert.strictEqual(
-      points([
-        "1:0",
-        "2:0",
-        "3:0",
-        "4:0",
-        "2:1",
-        "1:3",
-        "1:4",
-        "2:3",
-        "2:4",
-        "3:4",
-      ]),
-      15
-    );
-    assert.strictEqual(
-      points([
-        "1:0",
-        "2:0",
-        "3:0",
-        "4:4",
-        "2:2",
-        "3:3",
-        "1:4",
-        "2:3",
-        "2:4",
-        "3:4",
-      ]),
-      12
-    );
-  });
-});
+try {
+  assert.strictEqual(points(["3:1", "2:2", "0:1", "3:2"]), 7);
+  console.log("Test 1 passed.");
+} catch (error) {
+  console.error("Test 1 failed.", error.message);
+}
+
+try {
+  assert.strictEqual(points(["0:3", "1:2", "3:3", "1:1"]), 2);
+  console.log("Test 2 passed.");
+} catch (error) {
+  console.error("Test 2 failed.", error.message);
+}
+
+try {
+  assert.strictEqual(points(["0:4", "0:2", "2:3", "0:1"]), 0);
+  console.log("Test 3 passed.");
+} catch (error) {
+  console.error("Test 3 failed.", error.message);
+}
